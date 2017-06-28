@@ -1,0 +1,12 @@
+---
+  root: true
+
+  env:
+    browser: true
+
+  extends: eslint:recommended
+
+  parser: babel-eslint
+
+  plugins:
+  - flowtype

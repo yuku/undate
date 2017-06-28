@@ -1,3 +1,5 @@
+/* eslint-env mocha */
+
 import update, {wrapCursor} from './index.js.flow';
 
 function eq(a, b) {

@@ -9,6 +9,7 @@ This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 ## [Unreleased]
 ### Fixed
 - Handle inactive textarea element
+- Enable to insert a string similar to texts around the cursor
 
 ## [0.1.1] - 2017-06-28
 ### Fixed

@@ -4,7 +4,7 @@
   "description": "Undoable update for HTMLTextAreaElement",
   "main": "index.js",
   "scripts": {
-    "build": "flow-remove-types --pretty index.js.flow > index.js",
+    "build": "babel -o index.js index.js.flow",
     "test": "run-p test:*",
     "test:flow": "flow",
     "test:karma": "karma start --single-run"
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/yuku-t/undate#readme",
   "devDependencies": {
-    "babel-core": "^6.25.0",
+    "babel-cli": "^6.24.1",
     "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "flow-bin": "^0.48.0",
-    "flow-remove-types": "^1.2.1",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.1",

@@ -56,6 +56,31 @@ describe('index', () => {
         eq(el.selectionEnd, 'hello, wow'.length);
       });
     });
+
+    context('when another element is active', () => {
+      let activeElement;
+
+      beforeEach(() => {
+        activeElement = document.createElement('textarea');
+        document.body.appendChild(activeElement);
+        activeElement.focus();
+      });
+
+      afterEach(() => {
+        document.body.removeChild(activeElement);
+      });
+
+      it('works', () => {
+        update(el, 'hello, world');
+        eq(el.value, 'hello, world');
+      });
+
+      it('does not change active element', () => {
+        eq(document.activeElement, activeElement);
+        update(el, 'hello, world');
+        eq(document.activeElement, activeElement);
+      });
+    });
   });
 
   describe('module.exports.wrapCursor', () => {

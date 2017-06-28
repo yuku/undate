@@ -2,7 +2,9 @@
 
 Undoable update for HTMLTextAreaElement
 
+[![NPM version](http://img.shields.io/npm/v/undate.svg)](https://www.npmjs.com/package/undate)
 [![Build Status](https://travis-ci.org/yuku-t/undate.svg?branch=master)](https://travis-ci.org/yuku-t/undate)
+[![Code Climate](https://codeclimate.com/github/yuku-t/undate/badges/gpa.svg)](https://codeclimate.com/github/yuku-t/undate)
 
 ## Install
 

@@ -19,25 +19,40 @@ import update, {wrapCursor} from 'undate';
 
 const textareaElement = document.getElementById('textarea');
 
-textareaElement.value; //=> '|'
+textareaElement.value; //=> ''
 
 // Update whole value
 update(textareaElement, 'string before cursor', 'optional string after cursor');
 
-textareaElement.value; //=> 'string before cursor|optional string after cursor'
+textareaElement.value; //=> 'string before cursoroptional string after cursor'
 
 // Update around the cursor
-wrapCursor(textareaElement, ' *', '* ');
+wrapCursor(textareaElement, ' _', '_ ');
 
-textareaElement.value; //=> 'string before cursor *|* optional string after cursor'
-
-// Press cmd-z
-
-textareaElement.value; //=> 'string before cursor|optional string after cursor'
+textareaElement.value; //=> 'string before cursor __ optional string after cursor'
 
 // Press cmd-z
 
-textareaElement.value; //=> '|'
+textareaElement.value; //=> 'string before cursoroptional string after cursor'
+
+textareaElement.setSelectionRange(14, 27);
+
+textareaElement.value; //=> 'string before cursoroptional string after cursor'
+                       //                  ^^^^^^^^^^^^^^ selected
+
+wrapCursor(textareaElement, '**', '**');
+
+textareaElement.value; //=> 'string before **cursoroptional** string after cursor'
+                       //                    ^^^^^^^^^^^^^^ selected
+
+// Press cmd-z
+
+textareaElement.value; //=> 'string before cursoroptional string after cursor'
+                       //                  ^^^^^^^^^^^^^^ selected
+
+// Press cmd-z
+
+textareaElement.value; //=> ''
 ```
 
 ## License

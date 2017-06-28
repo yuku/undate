@@ -40,3 +40,5 @@ export function wrapCursor(el: HTMLTextAreaElement, before: string, after: ?stri
   el.selectionEnd = initEnd + before.length;
   return el;
 }
+
+// vim:filetype=javascript

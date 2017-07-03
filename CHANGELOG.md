@@ -7,6 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
+### Changed
+- Export update function as "update" not as default
+
 ### Fixed
 - Enable to import update and wrapCursor functions individually
 

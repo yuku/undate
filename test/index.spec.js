@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-import update, {wrapCursor} from '../src/index.js';
+import {update, wrapCursor} from '../src/index.js';
 
 function eq(a, b) {
   if (a !== b) {

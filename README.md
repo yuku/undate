@@ -15,7 +15,8 @@ npm install --save undate
 ## Usage
 
 ```js
-import update, {wrapCursor} from 'undate';
+import update from 'undate/lib/update';
+import wrapCursor from 'undate/lib/wrapCursor';
 
 const textareaElement = document.getElementById('textarea');
 

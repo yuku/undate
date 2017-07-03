@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
+### Fixed
+- Enable to import update and wrapCursor functions individually
 
 ## [0.1.2] - 2017-06-28
 ### Fixed

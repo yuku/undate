@@ -1,6 +1,6 @@
 // @flow
 
-export default function update(el: HTMLTextAreaElement, headToCursor: string, cursorToTail: ?string) {
+export default function (el: HTMLTextAreaElement, headToCursor: string, cursorToTail: ?string) {
   const curr = el.value,                            // strA + strB1 + strC
         next = headToCursor + (cursorToTail || ''), // strA + strB2 + strC
         activeElement = document.activeElement;
@@ -31,14 +31,3 @@ export default function update(el: HTMLTextAreaElement, headToCursor: string, cu
   el.setSelectionRange(headToCursor.length, headToCursor.length);
   return el;
 }
-
-export function wrapCursor(el: HTMLTextAreaElement, before: string, after: ?string) {
-  const initEnd = el.selectionEnd,
-        headToCursor = el.value.substr(0, el.selectionStart) + before,
-        cursorToTail = el.value.substring(el.selectionStart, initEnd) + (after || '') + el.value.substr(initEnd);
-  update(el, headToCursor, cursorToTail);
-  el.selectionEnd = initEnd + before.length;
-  return el;
-}
-
-// vim:filetype=javascript

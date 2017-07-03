@@ -2,11 +2,11 @@
   "name": "undate",
   "version": "0.1.2",
   "description": "Undoable update for HTMLTextAreaElement",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "babel -o index.js index.js.flow",
+    "build": "babel src -d lib && for js in src/*.js; do cp $js lib/${js##*/}.flow; done",
     "test": "run-p test:*",
-    "test:eslint": "eslint index.js.flow index.spec.js",
+    "test:eslint": "eslint src/*.js test/*.js",
     "test:flow": "flow",
     "test:karma": "karma start --single-run"
   },

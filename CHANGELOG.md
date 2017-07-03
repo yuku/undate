@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
+
+## [0.2.0] - 2017-07-03
 ### Changed
 - Export update function as "update" not as default
 
@@ -26,6 +28,7 @@ This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/yuku-t/undate/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/yuku-t/undate/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/yuku-t/undate/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/yuku-t/undate/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/yuku-t/undate/compare/v0.1.0...v0.1.1

@@ -10,7 +10,7 @@ export default function (el: HTMLTextAreaElement, headToCursor: string, cursorTo
       cLength = 0;
   while (curr[aLength] === next[aLength]) { aLength++; }
   while (curr[curr.length - cLength - 1] === next[next.length - cLength - 1]) { cLength++; }
-  aLength = Math.min(aLength, curr.length - cLength);
+  aLength = Math.min(aLength, Math.min(curr.length, next.length) - cLength);
 
   // Select strB1
   el.setSelectionRange(aLength, curr.length - cLength);

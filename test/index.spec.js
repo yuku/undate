@@ -81,6 +81,19 @@ describe('index', () => {
         eq(document.activeElement, activeElement);
       });
     });
+
+    context('when removing part of heading string', () => {
+      beforeEach(() => {
+        el.value = '            - markdown list';
+      });
+
+      it('works', () => {
+        update(el, '        - markdown list');
+        eq(el.value, '        - markdown list');
+        eq(el.selectionStart, '        - markdown list'.length);
+        eq(el.selectionEnd, '        - markdown list'.length);
+      });
+    });
   });
 
   describe('module.exports.wrapCursor', () => {

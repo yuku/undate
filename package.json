@@ -7,7 +7,7 @@
     "build": "babel src -d lib && for js in src/*.js; do cp $js lib/${js##*/}.flow; done",
     "test": "run-p test:*",
     "test:eslint": "eslint src/*.js test/*.js",
-    "test:flow": "flow",
+    "test:flow": "flow check",
     "test:karma": "karma start --single-run"
   },
   "repository": {

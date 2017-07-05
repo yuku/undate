@@ -9,6 +9,7 @@ This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 ## [Unreleased]
 ### Fixed
 - Fix element focus bug in safari
+- Fix bug that removing part of heading string causes wrong result
 
 ## [0.2.0] - 2017-07-03
 ### Changed

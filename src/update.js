@@ -25,9 +25,10 @@ export default function (el: HTMLTextAreaElement, headToCursor: string, cursorTo
     // Firefox and IE returns false in this case.
     el.value = next;
   }
-  activeElement && activeElement.focus();
 
   // Move cursor to the end of headToCursor
   el.setSelectionRange(headToCursor.length, headToCursor.length);
+
+  activeElement && activeElement.focus();
   return el;
 }

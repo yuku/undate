@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
+
+## [0.2.1] - 2017-07-05
 ### Fixed
 - Fix element focus bug in safari
 - Fix bug that removing part of heading string causes wrong result
@@ -31,7 +33,8 @@ This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/yuku-t/undate/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/yuku-t/undate/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/yuku-t/undate/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/yuku-t/undate/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/yuku-t/undate/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/yuku-t/undate/compare/v0.1.0...v0.1.1

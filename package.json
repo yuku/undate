@@ -1,6 +1,6 @@
 {
   "name": "undate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Undoable update for HTMLTextAreaElement",
   "main": "lib/index.js",
   "scripts": {

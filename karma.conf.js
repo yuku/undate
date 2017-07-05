@@ -1,6 +1,15 @@
 // Karma configuration
 // Generated on Wed Jun 28 2017 10:30:27 GMT+0900 (JST)
 
+const SUPPORTED_BROWSERS = [
+  'Chrome',
+  'Edge',
+  'Firefox',
+  'IE',
+  'Opera',
+  'Safari',
+];
+
 module.exports = function(config) {
   config.set({
 
@@ -10,7 +19,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'detectBrowsers'],
 
 
     // list of files / patterns to load in the browser
@@ -56,7 +65,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: [],
 
 
     // Continuous Integration mode
@@ -86,6 +95,18 @@ module.exports = function(config) {
           }
         ]
       }
-    }
+    },
+
+    detectBrowsers: {
+      usePhantomJS: false,
+      postDetection: (browsers) => {
+        if (process.env.TRAVIS) {
+          // TODO: Test with Chrome
+          return ['Firefox'];
+        } else {
+          return browsers.filter(browser => SUPPORTED_BROWSERS.indexOf(browser) !== -1);
+        }
+      }
+    },
   })
 }

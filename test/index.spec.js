@@ -1,5 +1,6 @@
 /* eslint-env mocha */
 
+import sinon from 'sinon';
 import {update, wrapCursor} from '../src/index.js';
 
 function eq(a, b) {
@@ -9,11 +10,13 @@ function eq(a, b) {
 }
 
 describe('index', () => {
-  let el;
+  let el, spy;
 
   beforeEach(() => {
     el = document.createElement('textarea');
     document.body.appendChild(el);
+    spy = sinon.spy();
+    el.addEventListener('input', spy);
   });
 
   afterEach(() => {
@@ -27,6 +30,7 @@ describe('index', () => {
         eq(el.value, 'foo');
         eq(el.selectionStart, 'foo'.length);
         eq(el.selectionEnd, 'foo'.length);
+        eq(spy.calledOnce, true);
       });
 
       it('works with third parameter', () => {
@@ -34,6 +38,7 @@ describe('index', () => {
         eq(el.value, 'barbaz');
         eq(el.selectionStart, 'bar'.length);
         eq(el.selectionEnd, 'bar'.length);
+        eq(spy.calledOnce, true);
       });
     });
 
@@ -47,6 +52,7 @@ describe('index', () => {
         eq(el.value, 'hello, world yey');
         eq(el.selectionStart, 'hello, world yey'.length);
         eq(el.selectionEnd, 'hello, world yey'.length);
+        eq(spy.calledOnce, true);
       });
 
       it('works with third parameter', () => {
@@ -54,6 +60,7 @@ describe('index', () => {
         eq(el.value, 'hello, wow world');
         eq(el.selectionStart, 'hello, wow'.length);
         eq(el.selectionEnd, 'hello, wow'.length);
+        eq(spy.calledOnce, true);
       });
     });
 
@@ -92,6 +99,7 @@ describe('index', () => {
         eq(el.value, '        - markdown list');
         eq(el.selectionStart, '        - markdown list'.length);
         eq(el.selectionEnd, '        - markdown list'.length);
+        eq(spy.calledOnce, true);
       });
     });
   });
@@ -108,6 +116,7 @@ describe('index', () => {
         eq(el.value, 'foo bar baz');
         eq(el.selectionStart, 'foo bar '.length);
         eq(el.selectionEnd, 'foo bar '.length);
+        eq(spy.calledOnce, true);
       });
 
       it('works with third parameter', () => {
@@ -115,6 +124,7 @@ describe('index', () => {
         eq(el.value, 'foo bar hoge baz');
         eq(el.selectionStart, 'foo bar '.length);
         eq(el.selectionEnd, 'foo bar '.length);
+        eq(spy.calledOnce, true);
       });
     });
 
@@ -129,6 +139,7 @@ describe('index', () => {
         eq(el.value, 'foo @bar baz');
         eq(el.selectionStart, 'foo @'.length);
         eq(el.selectionEnd, 'foo @bar'.length);
+        eq(spy.calledOnce, true);
       });
 
       it('works with third parameter', () => {
@@ -136,6 +147,7 @@ describe('index', () => {
         eq(el.value, 'foo **bar** baz');
         eq(el.selectionStart, 'foo **'.length);
         eq(el.selectionEnd, 'foo **bar'.length);
+        eq(spy.calledOnce, true);
       });
     });
   });

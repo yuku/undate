@@ -43,6 +43,7 @@
     "karma-safari-launcher": "^1.0.0",
     "karma-webpack": "^2.0.3",
     "mocha": "^3.4.2",
+    "sinon": "^3.2.1",
     "webpack": "^2.6.1"
   },
   "dependencies": {

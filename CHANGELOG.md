@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
+### Fixed
+- Dispatch input event in firefox and IE
 
 ## [0.2.1] - 2017-07-05
 ### Fixed

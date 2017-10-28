@@ -8,15 +8,17 @@ import wrapCursor from '../src/wrapCursor';
 describe('wrapCursor', () => {
   let el, spy;
 
+  const body: HTMLElement = (document.body: any);
+
   beforeEach(() => {
     el = document.createElement('textarea');
-    document.body.appendChild(el);
+    body.appendChild(el);
     spy = sinon.spy();
     el.addEventListener('input', spy);
   });
 
   afterEach(() => {
-    document.body.removeChild(el);
+    body.removeChild(el);
   });
 
   context('without selection range', () => {

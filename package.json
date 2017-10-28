@@ -33,6 +33,7 @@
     "eslint": "^4.10.0",
     "eslint-plugin-flowtype": "^2.39.1",
     "flow-bin": "^0.57.3",
+    "flow-typed": "^2.2.1",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-detect-browsers": "^2.2.5",

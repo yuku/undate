@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+/* @flow */
 
 import assert from 'assert';
 import sinon from 'sinon';
@@ -8,15 +9,17 @@ import update from '../src/update';
 describe('update', () => {
   let el, spy;
 
+  const body: HTMLElement = (document.body: any);
+
   beforeEach(() => {
     el = document.createElement('textarea');
-    document.body.appendChild(el);
+    body.appendChild(el);
     spy = sinon.spy();
     el.addEventListener('input', spy);
   });
 
   afterEach(() => {
-    document.body.removeChild(el);
+    body.removeChild(el);
   });
 
   context('when value is empty', () => {
@@ -64,12 +67,12 @@ describe('update', () => {
 
     beforeEach(() => {
       activeElement = document.createElement('textarea');
-      document.body.appendChild(activeElement);
+      body.appendChild(activeElement);
       activeElement.focus();
     });
 
     afterEach(() => {
-      document.body.removeChild(activeElement);
+      body.removeChild(activeElement);
     });
 
     it('works', () => {

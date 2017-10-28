@@ -13,3 +13,4 @@ ratings:
 exclude_paths:
 - karma.conf.js
 - test
+- flow-typed

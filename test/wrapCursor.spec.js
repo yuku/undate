@@ -1,13 +1,9 @@
 /* eslint-env mocha */
 
+import assert from 'assert';
 import sinon from 'sinon';
-import wrapCursor from '../src/wrapCursor';
 
-function eq(a, b) {
-  if (a !== b) {
-    throw new Error(`"${b}" is expected, but "${a}" is given`);
-  }
-}
+import wrapCursor from '../src/wrapCursor';
 
 describe('wrapCursor', () => {
   let el, spy;
@@ -31,18 +27,18 @@ describe('wrapCursor', () => {
 
     it('works without third parameter', () => {
       wrapCursor(el, 'bar ');
-      eq(el.value, 'foo bar baz');
-      eq(el.selectionStart, 'foo bar '.length);
-      eq(el.selectionEnd, 'foo bar '.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'foo bar baz');
+      assert(el.selectionStart === 'foo bar '.length);
+      assert(el.selectionEnd === 'foo bar '.length);
+      assert(spy.calledOnce === true);
     });
 
     it('works with third parameter', () => {
       wrapCursor(el, 'bar ', 'hoge ');
-      eq(el.value, 'foo bar hoge baz');
-      eq(el.selectionStart, 'foo bar '.length);
-      eq(el.selectionEnd, 'foo bar '.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'foo bar hoge baz');
+      assert(el.selectionStart === 'foo bar '.length);
+      assert(el.selectionEnd === 'foo bar '.length);
+      assert(spy.calledOnce === true);
     });
   });
 
@@ -54,18 +50,18 @@ describe('wrapCursor', () => {
 
     it('works without third parameter', () => {
       wrapCursor(el, '@');
-      eq(el.value, 'foo @bar baz');
-      eq(el.selectionStart, 'foo @'.length);
-      eq(el.selectionEnd, 'foo @bar'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'foo @bar baz');
+      assert(el.selectionStart === 'foo @'.length);
+      assert(el.selectionEnd === 'foo @bar'.length);
+      assert(spy.calledOnce === true);
     });
 
     it('works with third parameter', () => {
       wrapCursor(el, '**', '**');
-      eq(el.value, 'foo **bar** baz');
-      eq(el.selectionStart, 'foo **'.length);
-      eq(el.selectionEnd, 'foo **bar'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'foo **bar** baz');
+      assert(el.selectionStart === 'foo **'.length);
+      assert(el.selectionEnd === 'foo **bar'.length);
+      assert(spy.calledOnce === true);
     });
   });
 });

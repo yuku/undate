@@ -1,13 +1,9 @@
 /* eslint-env mocha */
 
+import assert from 'assert';
 import sinon from 'sinon';
-import update from '../src/update';
 
-function eq(a, b) {
-  if (a !== b) {
-    throw new Error(`"${b}" is expected, but "${a}" is given`);
-  }
-}
+import update from '../src/update';
 
 describe('update', () => {
   let el, spy;
@@ -26,18 +22,18 @@ describe('update', () => {
   context('when value is empty', () => {
     it('works without third parameter', () => {
       update(el, 'foo');
-      eq(el.value, 'foo');
-      eq(el.selectionStart, 'foo'.length);
-      eq(el.selectionEnd, 'foo'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'foo');
+      assert(el.selectionStart === 'foo'.length);
+      assert(el.selectionEnd === 'foo'.length);
+      assert(spy.calledOnce === true);
     });
 
     it('works with third parameter', () => {
       update(el, 'bar', 'baz');
-      eq(el.value, 'barbaz');
-      eq(el.selectionStart, 'bar'.length);
-      eq(el.selectionEnd, 'bar'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'barbaz');
+      assert(el.selectionStart === 'bar'.length);
+      assert(el.selectionEnd === 'bar'.length);
+      assert(spy.calledOnce === true);
     });
   });
 
@@ -48,18 +44,18 @@ describe('update', () => {
 
     it('works without third parameter', () => {
       update(el, 'hello, world yey');
-      eq(el.value, 'hello, world yey');
-      eq(el.selectionStart, 'hello, world yey'.length);
-      eq(el.selectionEnd, 'hello, world yey'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'hello, world yey');
+      assert(el.selectionStart === 'hello, world yey'.length);
+      assert(el.selectionEnd === 'hello, world yey'.length);
+      assert(spy.calledOnce === true);
     });
 
     it('works with third parameter', () => {
       update(el, 'hello, wow', ' world');
-      eq(el.value, 'hello, wow world');
-      eq(el.selectionStart, 'hello, wow'.length);
-      eq(el.selectionEnd, 'hello, wow'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === 'hello, wow world');
+      assert(el.selectionStart === 'hello, wow'.length);
+      assert(el.selectionEnd === 'hello, wow'.length);
+      assert(spy.calledOnce === true);
     });
   });
 
@@ -78,13 +74,13 @@ describe('update', () => {
 
     it('works', () => {
       update(el, 'hello, world');
-      eq(el.value, 'hello, world');
+      assert(el.value === 'hello, world');
     });
 
     it('does not change active element', () => {
-      eq(document.activeElement, activeElement);
+      assert(document.activeElement === activeElement);
       update(el, 'hello, world');
-      eq(document.activeElement, activeElement);
+      assert(document.activeElement === activeElement);
     });
   });
 
@@ -95,10 +91,10 @@ describe('update', () => {
 
     it('works', () => {
       update(el, '        - markdown list');
-      eq(el.value, '        - markdown list');
-      eq(el.selectionStart, '        - markdown list'.length);
-      eq(el.selectionEnd, '        - markdown list'.length);
-      eq(spy.calledOnce, true);
+      assert(el.value === '        - markdown list');
+      assert(el.selectionStart === '        - markdown list'.length);
+      assert(el.selectionEnd === '        - markdown list'.length);
+      assert(spy.calledOnce === true);
     });
   });
 });

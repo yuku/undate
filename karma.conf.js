@@ -89,7 +89,8 @@ module.exports = function(config) {
                 loader: 'babel-loader',
                 options: {
                   presets: [
-                    'flow'
+                    'flow',
+                    'power-assert',
                   ]
                 }
               }

@@ -8,6 +8,10 @@ This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
 
+## [0.2.3] - 2017-10-29
+### Fixed
+- Fix potential infinite loop
+
 ## [0.2.2] - 2017-08-31
 ### Fixed
 - Dispatch input event in firefox and IE
@@ -37,7 +41,8 @@ This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/yuku-t/undate/compare/v0.2.2...HEAD
+[Unreleased]: https://github.com/yuku-t/undate/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/yuku-t/undate/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/yuku-t/undate/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/yuku-t/undate/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/yuku-t/undate/compare/v0.1.2...v0.2.0

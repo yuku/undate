@@ -18,8 +18,8 @@ export default function (el: HTMLTextAreaElement, headToCursor: string, cursorTo
   //  Calculate length of strA and strC
   let aLength = 0,
       cLength = 0;
-  while (curr[aLength] === next[aLength]) { aLength++; }
-  while (curr[curr.length - cLength - 1] === next[next.length - cLength - 1]) { cLength++; }
+  while (aLength < curr.length && aLength < next.length && curr[aLength] === next[aLength]) { aLength++; }
+  while (curr.length - cLength - 1 >= 0 && next.length - cLength - 1 >= 0 && curr[curr.length - cLength - 1] === next[next.length - cLength - 1]) { cLength++; }
   aLength = Math.min(aLength, Math.min(curr.length, next.length) - cLength);
 
   // Select strB1

@@ -1,15 +1,5 @@
 // @flow
 
-function createInputEvent(): Event {
-  if (typeof Event !== "undefined") {
-    return new Event("input", { bubbles: true, cancelable: true });
-  } else {
-    const event = document.createEvent("Event");
-    event.initEvent("input", true, true);
-    return event;
-  }
-}
-
 export default function (el: HTMLTextAreaElement, headToCursor: string, cursorToTail: ?string) {
   const curr = el.value,                            // strA + strB1 + strC
         next = headToCursor + (cursorToTail || ''), // strA + strB2 + strC
@@ -34,7 +24,11 @@ export default function (el: HTMLTextAreaElement, headToCursor: string, cursorTo
     // Document.execCommand returns false if the command is not supported.
     // Firefox and IE returns false in this case.
     el.value = next;
-    el.dispatchEvent(createInputEvent());
+
+    // Dispatch input event. Note that `new Event("input")` throws an error on IE11
+    const event = document.createEvent("Event");
+    event.initEvent("input", true, true);
+    el.dispatchEvent(event);
   }
 
   // Move cursor to the end of headToCursor

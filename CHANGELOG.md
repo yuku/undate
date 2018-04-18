@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log adheres to [keepachangelog.com](http://keepachangelog.com).
 
 ## [Unreleased]
+### Changed
+- Rewrite in TypeScript
 
 ## [0.2.4] - 2018-01-24
 ### Fixed
